@@ -32,6 +32,7 @@ h1:hover {
 
 .row {
   border-radius: 10px;
+  flex-wrap: nowrap;
 }
 
 .col-9 {
@@ -132,4 +133,16 @@ span {
 a {
   color: rgb(82, 113, 130);
   text-decoration: none;
+}
+
+.current-icon {
+  position: relative;
+  bottom: 3px;
+  left: 8px;
+  font-size: 30px;
+}
+
+.unit {
+  padding-left: 3px;
+  font-weight: 400;
 }
