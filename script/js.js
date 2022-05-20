@@ -40,16 +40,15 @@ elemementDateTime.innerHTML = formatDate(currentDateTime);
 // Weather API
 
 function displayWeatherCondition(response) {
-  document.querySelector("#element-city").innerHTML = response.data.name;
-  document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  let temperatureElement = document.querySelector("#current-temp");
+  let cityElement = document.querySelector("#element-city");
+  let humidityElement = document.querySelector(".humidity.value");
+  let windElement = document.querySelector(".wind.value");
 
-  document.querySelector(".humidity.value").innerHTML =
-    response.data.main.humidity;
-  document.querySelector(".wind.value").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function search(event) {
