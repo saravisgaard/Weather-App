@@ -44,11 +44,16 @@ function displayWeatherCondition(response) {
   let cityElement = document.querySelector("#element-city");
   let humidityElement = document.querySelector(".humidity.value");
   let windElement = document.querySelector(".wind.value");
+  let iconElement = document.querySelector(".current.icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    ".current.icon",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {

@@ -25,7 +25,9 @@
           <h1 id="current-temp">10</h1>
           <span class="metric">°C</span>
           <h1 id="element-city">London</h1>
-          <span><i class="fa-solid fa-cloud-sun main-icon current-icon"></i></i></span>
+          <span
+            ><i class="fa-solid fa-cloud-sun main-icon current-icon"></i
+          ></span>
           <p class="dayHour">Sunday, 21:32 pm</p>
           <div class="row">
             <div class="col-2"><strong>Monday</strong></div>
@@ -40,15 +42,23 @@
           </div>
 
           <div class="row">
-            <div class="col-2"><i class="fa-solid fa-cloud-sun main-icon one-icon"></i></div>
+            <div class="col-2">
+              <i class="fa-solid fa-cloud-sun main-icon one-icon"></i>
+            </div>
 
             <div class="col-2"><i class="fa-solid fa-sun two-icon"></i></div>
 
-            <div class="col-2"><i class="fa-solid fa-cloud-sun three-icon"></i></div>
+            <div class="col-2">
+              <i class="fa-solid fa-cloud-sun three-icon"></i>
+            </div>
 
-            <div class="col-2"><i class="fa-solid fa-cloud-rain four-icon"></i></div>
+            <div class="col-2">
+              <i class="fa-solid fa-cloud-rain four-icon"></i>
+            </div>
 
-            <div class="col-2"><i class="fa-solid fa-cloud-rain five-icon"></i></div>
+            <div class="col-2">
+              <i class="fa-solid fa-cloud-rain five-icon"></i>
+            </div>
           </div>
 
           <div class="row">
@@ -66,7 +76,12 @@
 
         <div class="col-3">
           <form id="city-search-form" action="">
-            <input id="input-city" type="search" placeholder="Search city" autocomplete="off" />
+            <input
+              id="input-city"
+              type="search"
+              placeholder="Search city"
+              autocomplete="off"
+            />
             <button type="submit" class="btn btn-dark btn-sm">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -77,27 +92,22 @@
           </div>
 
           <div class="row">
-
             <div class="col-7">
-            
               <ul>
-              <li class="row humidity">Humidity</li>
-              <li class="row wind">Wind</li>
-              <li class="row rain">Rain</li>
-              <li class="row clouds">Clouds</li>
+                <li class="row humidity">Humidity</li>
+                <li class="row wind">Wind</li>
+                <li class="row rain">Rain</li>
+                <li class="row clouds">Clouds</li>
               </ul>
-
             </div>
 
             <div class="col-1">
-             
               <ul>
-              <li class="row humidity value">52<span id="unit">%</span></li>
-              <li class="row wind value">5<span id="unit">km/h</span></li>
-              <li class="row rain value">52<span id="unit">%</span></li>
-              <li class="row clouds value">23<span id="unit">%</span></li>
+                <li class="row humidity value">52<span id="unit">%</span></li>
+                <li class="row wind value">5<span id="unit">km/h</span></li>
+                <li class="row rain value">52<span id="unit">%</span></li>
+                <li class="row clouds value">23<span id="unit">%</span></li>
               </ul>
-
             </div>
           </div>
         </div>
@@ -105,8 +115,10 @@
     </div>
 
     <div id="source">
-      <a href="https://github.com/saravisgaard/Weather-App" target="_blank">Open-source code</a>
-       by Sara Gomes
+      <a href="https://github.com/saravisgaard/Weather-App" target="_blank"
+        >Open-source code</a
+      >
+      by Sara Gomes
     </div>
 
     <script src="script/js.js"></script>
