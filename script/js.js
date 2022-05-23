@@ -37,19 +37,21 @@ function formatDate(dateInput) {
 let elemementDateTime = document.querySelector(".dayHour");
 elemementDateTime.innerHTML = formatDate(currentDateTime);
 
-// Weather API
-
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#element-city");
-  let humidityElement = document.querySelector(".humidity.value");
-  let windElement = document.querySelector(".wind.value");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let rainElement = document.querySelector("#rain");
+  let cloudElement = document.querySelector("#clouds");
   let iconElement = document.querySelector("#main-icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  rainElement.innerHTML = response.data.main.rain;
+  cloudElement.innerHTML = response.data.main.clouds;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`

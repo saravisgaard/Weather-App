@@ -17,6 +17,10 @@ h1:hover {
   font-size: 42px;
 }
 
+p {
+  margin-bottom: 2rem;
+}
+
 #current-temp {
   padding-right: 5px;
 }
@@ -30,15 +34,10 @@ h1:hover {
   border-radius: 20px;
 }
 
-.row {
-  border-radius: 10px;
-  flex-wrap: nowrap;
-}
-
 .col-9 {
   padding-top: 220px;
   padding-bottom: 20px;
-  padding-left: 25px;
+  padding-left: 30px;
   background-position: 100%;
   background-size: cover;
   border-top-left-radius: 20px;
@@ -69,28 +68,12 @@ h1:hover {
 
 .col-7 {
   padding-left: 9px;
-  line-height: 2.5;
+  line-height: 2.9;
 }
 
 .col-1 {
-  line-height: 2.5;
+  line-height: 2.9;
   font-weight: 300;
-}
-
-.row.humidity {
-  padding-bottom: 20px;
-}
-
-.row.wind {
-  padding-bottom: 20px;
-}
-
-.row.rain {
-  padding-bottom: 20px;
-}
-
-.row.clouds {
-  padding-bottom: 20px;
 }
 
 .humidity.value:hover {
@@ -120,7 +103,12 @@ span {
 }
 
 ul {
-  padding-left: 19px;
+  padding-left: 7px;
+  list-style: none;
+}
+
+li {
+  padding-bottom: 20px;
 }
 
 #source {
@@ -141,9 +129,4 @@ a {
   bottom: 9px;
   left: 3px;
   max-width: 60px;
-}
-
-#unit {
-  padding-left: 3px;
-  font-weight: 400;
 }
