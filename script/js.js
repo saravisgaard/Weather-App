@@ -37,6 +37,34 @@ function formatDate(dateInput) {
 let elemementDateTime = document.querySelector(".dayHour");
 elemementDateTime.innerHTML = formatDate(currentDateTime);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  let forecastHTML = `<div class="row" id="forecast">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div><strong>${day}</strong></div>
+              <div>
+                <i class="fa-solid fa-cloud-sun main-icon one-icon"></i>
+              </div>
+              <div>
+                <span class="weather-forecast-temperature-max"
+                  ><strong>12°</strong></span
+                >
+                <span class="weather-forecast-temperature-min">10°</span>
+              </div>
+            </div>
+ `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#element-city");
@@ -69,3 +97,5 @@ function search(event) {
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", search);
+
+displayForecast();
