@@ -50,8 +50,20 @@ p {
   left: -6px;
 }
 
-.col-2.value:hover {
-  font-weight: 350;
+.weather-forecast-temperature-max {
+  font-weight: 200;
+}
+
+.weather-forecast-temperature-min {
+  font-weight: 200;
+}
+
+.weather-forecast-temperature-max:hover {
+  font-weight: 400;
+}
+
+.weather-forecast-temperature-min:hover {
+  font-weight: 250;
 }
 
 .col-3 {
