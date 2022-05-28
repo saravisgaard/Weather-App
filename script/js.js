@@ -103,16 +103,14 @@ function displayWeatherCondition(response) {
   let cityElement = document.querySelector("#element-city");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let rainElement = document.querySelector("#rain");
-  let cloudElement = document.querySelector("#clouds");
+  let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#main-icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  rainElement.innerHTML = response.data.main.rain;
-  cloudElement.innerHTML = response.data.main.clouds;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -130,13 +128,23 @@ function search(event) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function search(city) {
-  let apiKey = "b091ac96e71b257b27da76ec8db7ca89";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", search);
 
-search("London");
+function showPosition(position) {
+  let long = position.coords.longitude;
+  let lat = position.coords.latitude;
+
+  let apiKeyLocation = "b091ac96e71b257b27da76ec8db7ca89";
+  let units = "metric";
+  let apiBody = `https://api.openweathermap.org/data/2.5/weather?`;
+  let apiURL = `${apiBody}lat=${lat}&lon=${long}&appid=${apiKeyLocation}&units=${units}`;
+
+  axios.get(`${apiURL}`).then(displayWeatherCondition);
+}
+
+function getCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+getCurrentLocation();

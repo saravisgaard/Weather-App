@@ -74,17 +74,15 @@ p {
 
 .col-12 {
   padding-top: 27px;
-  padding-bottom: 35px;
-  padding-left: 15px;
 }
 
 .col-7 {
-  padding-left: 9px;
-  line-height: 2.9;
+  padding-left: 6px;
+  line-height: 3.5;
 }
 
 .col-1 {
-  line-height: 2.9;
+  line-height: 3.5;
   font-weight: 300;
 }
 
@@ -102,6 +100,16 @@ p {
 
 .clouds.value:hover {
   font-weight: 500;
+}
+
+#details {
+  padding-top: 30px;
+}
+
+#description {
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 button {
