@@ -72,7 +72,7 @@ function displayForecast(response) {
                 forecastDay.weather[0].icon
               }@2x.png"
               alt=""
-              width="30"
+              width="35"
           />
               </div>
               <div>
@@ -130,5 +130,13 @@ function search(event) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
+function search(city) {
+  let apiKey = "b091ac96e71b257b27da76ec8db7ca89";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", search);
+
+search("London");
