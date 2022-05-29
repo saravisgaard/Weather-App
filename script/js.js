@@ -1,44 +1,37 @@
-let currentDateTime = new Date();
+// Show current day and hour
 
-function formatDate(dateInput) {
-  let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
 
-  let date = dateInput.getDate();
-  let weekDay = weekDays[dateInput.getDay()];
-  let month = months[dateInput.getMonth()];
-  let hrs = dateInput.getHours();
-  if (hrs < 10) {
-    hrs = `0${hrs}`;
-  }
-  let mins = dateInput.getMinutes();
-  if (mins < 10) {
-    mins = `0${mins}`;
-  }
-
-  let formattedDate = `${weekDay}, ${date}. ${month}, ${hrs}:${mins}`;
-
-  return formattedDate;
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 
-let elemementDateTime = document.querySelector(".dayHour");
-elemementDateTime.innerHTML = formatDate(currentDateTime);
+let showDayHour = document.querySelector(".dayHour");
+showDayHour.innerHTML = new Date();
 
-function formatDay(dateInput) {
-  let date = new Date(dateInput);
+// Show forecast days
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = [
     "Sunday",
@@ -52,6 +45,8 @@ function formatDay(dateInput) {
 
   return days[day];
 }
+
+// Show forecast
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -98,6 +93,8 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+// Show current weather
+
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#element-city");
@@ -119,6 +116,8 @@ function displayWeatherCondition(response) {
   getForecast(response.data.coord);
 }
 
+// Search
+
 function search(event) {
   event.preventDefault();
   let apiKey = "b091ac96e71b257b27da76ec8db7ca89";
@@ -130,6 +129,8 @@ function search(event) {
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", search);
+
+// Show current position
 
 function showPosition(position) {
   let long = position.coords.longitude;

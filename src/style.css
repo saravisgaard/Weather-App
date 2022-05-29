@@ -21,8 +21,24 @@ p {
   margin-bottom: 2rem;
 }
 
-#current-temp {
-  padding-right: 5px;
+button {
+  border: 0px;
+  position: relative;
+  top: -2px;
+}
+
+ul {
+  padding-left: 7px;
+  list-style: none;
+}
+
+li {
+  padding-bottom: 20px;
+}
+
+a {
+  color: rgb(82, 113, 130);
+  text-decoration: none;
 }
 
 .container {
@@ -51,22 +67,6 @@ p {
   font-weight: 600;
 }
 
-.weather-forecast-temperature-max {
-  font-weight: 200;
-}
-
-.weather-forecast-temperature-min {
-  font-weight: 200;
-}
-
-.weather-forecast-temperature-max:hover {
-  font-weight: 400;
-}
-
-.weather-forecast-temperature-min:hover {
-  font-weight: 250;
-}
-
 .col-3 {
   padding-top: 30px;
   padding-bottom: 12px;
@@ -88,6 +88,22 @@ p {
   font-weight: 300;
 }
 
+.weather-forecast-temperature-max {
+  font-weight: 200;
+}
+
+.weather-forecast-temperature-min {
+  font-weight: 200;
+}
+
+.weather-forecast-temperature-max:hover {
+  font-weight: 400;
+}
+
+.weather-forecast-temperature-min:hover {
+  font-weight: 250;
+}
+
 .detail-value {
   font-weight: 400;
 }
@@ -106,21 +122,6 @@ p {
   font-size: 14px;
 }
 
-button {
-  border: 0px;
-  position: relative;
-  top: -2px;
-}
-
-ul {
-  padding-left: 7px;
-  list-style: none;
-}
-
-li {
-  padding-bottom: 20px;
-}
-
 #source {
   color: rgb(31, 33, 48);
   position: relative;
@@ -129,9 +130,8 @@ li {
   font-family: "Courier New", Courier, monospace;
 }
 
-a {
-  color: rgb(82, 113, 130);
-  text-decoration: none;
+#current-temp {
+  padding-right: 5px;
 }
 
 #main-icon {
