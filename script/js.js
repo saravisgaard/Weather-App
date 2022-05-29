@@ -135,10 +135,10 @@ function showPosition(position) {
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
 
-  let apiKeyLocation = "b091ac96e71b257b27da76ec8db7ca89";
+  let apiKey = "b091ac96e71b257b27da76ec8db7ca89";
   let units = "metric";
   let apiBody = `https://api.openweathermap.org/data/2.5/weather?`;
-  let apiURL = `${apiBody}lat=${lat}&lon=${long}&appid=${apiKeyLocation}&units=${units}`;
+  let apiURL = `${apiBody}lat=${lat}&lon=${long}&appid=${apiKey}&units=${units}`;
 
   axios.get(`${apiURL}`).then(displayWeatherCondition);
 }
