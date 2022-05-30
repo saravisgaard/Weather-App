@@ -22,11 +22,11 @@ function formatDate(timestamp) {
   ];
 
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}`;
 }
 
-let showDayHour = document.querySelector(".dayHour");
-showDayHour.innerHTML = new Date();
+let showDayHour = document.querySelector(`#dayHour`);
+showDayHour.innerHTML = formatDate(new Date());
 
 // Show forecast days
 
